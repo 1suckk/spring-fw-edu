@@ -11,7 +11,8 @@ public class StepController {
 	public String memberHandle(@ModelAttribute("kkk") StepVO vo) {
 		if(vo.getAge() < 18) {
 			System.out.println("[ REDIRECT ]");
-			return "redirect:/resources/stepForm.html";
+			//return "redirect:/resources/stepForm.html";
+			return "redirect:/https://www.naver.com";
 		}
 		System.out.println("[ 전달된 Command 객체의 정보 ]");
 		System.out.println(vo.getName());
