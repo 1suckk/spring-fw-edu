@@ -1,6 +1,5 @@
 package edu.example.springedu.controller;
 
-import javax.servlet.http.HttpServletRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -25,11 +24,10 @@ public class UserController {
 	}
 
 	@RequestMapping(value = "/userSave", method = RequestMethod.POST)
-	public String userSave(UserVO userVo, Model model, HttpServletRequest req) {
+	public String userSave(UserVO userVo, Model model) {
 		System.out.println("----- UserController.userSave() : POST -----");
 		System.out.println("userInfo : " + userVo.toString());
 		model.addAttribute("msg", "처리 성공");
-		model.addAttribute("refinfo", req.getHeader("referer"));
 		return "userInfo";
 	}
 }
